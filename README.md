@@ -5,7 +5,9 @@ A Discord Bot that generates images using ComfyUI's workflow api
 You will need: discord.py and ComfyUI
 
 # How to use the bot
-You must use a workflow_api.json that can be obtained from ComfyUI when dev mode is enabled. Then, in discordcomfy.py you'll find the command !gen "prompt". There is a modification of the workflow_api.json that happens before running the model, as these modifications change the _seed_ and the _prompt_ itself. If it is not working, you must verify that these modifications work for your workflow_api.json
+You must use a workflow_api.json that can be obtained from ComfyUI when dev mode is enabled. Then, in discordcomfy.py you'll find the function genimg(mensaje). There is a modification of the workflow_api.json that happens before running the model, as these modifications change the _seed_ and the _prompt_ itself. If it is not working, you must verify that these modifications work for your workflow_api.json
+
+Run the bot: python comfyui-bot.py
 
 # Features
 I haven't implemented the option to upload photos yet for generating with img2img, but I will do it soon. For now, only txt2image is possible
