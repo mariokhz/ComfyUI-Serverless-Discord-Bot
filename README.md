@@ -1,4 +1,15 @@
-# ComfyUI-serverless
+# ComfyUI-serverless for Discord Bot
+_**A Discord Bot that generates images using ComfyUI's workflow api**_
+# Requirements
+You will need: discord.py and ComfyUI
+
+# How to use the bot
+You must use a workflow_api.json that can be obtained from ComfyUI when dev mode is enabled. Then, in discordcomfy.py you'll find the command !gen "prompt". There is a modification of the workflow_api.json that happens before running the model, as these modifications change the _seed_ and the _prompt_ itself. If it is not working, you must verify that these modifications work for your workflow_api.json
+
+# Features
+I haven't implemented the option to upload photos yet for generating with img2img, but I will do it soon. For now, only txt2image is possible
+
+# Original README.MD
 _**A connector to use ComfyUI in serverless deployments**_
 
 ComfyUI is incredibly flexible and fast; it is the perfect tool launch new workflows in serverless deployments. Unfortunately, there isn't a lot on API documentation and the examples that have been offered so far don't deal with some important issues (for example: good ways to pass images to Comfy, generalized handling of API json files, etc).
