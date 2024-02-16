@@ -1,7 +1,6 @@
 TOKEN = 'Write your token here'
 import discord
 from discord.ext import commands
-import shutil
 from PIL import Image
 from discordcomfy import genimg
 
