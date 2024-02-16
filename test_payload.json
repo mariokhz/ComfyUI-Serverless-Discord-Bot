@@ -1,89 +1,94 @@
 {
-  "10": {
+  "1": {
     "inputs": {
-      "ckpt_name": "v1-5-pruned-emaonly.safetensors"
+      "text": "funcionando",
+      "clip": [
+        "2",
+        1
+      ]
     },
-    "class_type": "CheckpointLoaderSimple"
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
   },
-  "22": {
+  "2": {
     "inputs": {
-      "add_noise": "enable",
-      "noise_seed": 1234,
-      "steps": 5,
-      "cfg": 7,
-      "sampler_name": "euler_ancestral",
-      "scheduler": "karras",
-      "start_at_step": 0,
-      "end_at_step": 1000,
-      "return_with_leftover_noise": "disable",
+      "ckpt_name": "dreamshaper_8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "3": {
+    "inputs": {
+      "seed": 0,
+      "steps": 1,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
       "model": [
-        "10",
+        "2",
         0
       ],
       "positive": [
-        "240",
+        "1",
         0
       ],
       "negative": [
-        "243",
+        "1",
         0
       ],
       "latent_image": [
-        "301",
+        "4",
         0
       ]
     },
-    "class_type": "KSamplerAdvanced"
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
   },
-  "201": {
+  "4": {
     "inputs": {
-      "filename_prefix": "basic",
-      "images": [
-        "247",
-        0
-      ]
+      "width": 128,
+      "height": 128,
+      "batch_size": 1
     },
-    "class_type": "SaveImage"
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
   },
-  "240": {
-    "inputs": {
-      "text": "a photo of a dog",
-      "clip": [
-        "10",
-        1
-      ]
-    },
-    "class_type": "CLIPTextEncode"
-  },
-  "243": {
-    "inputs": {
-      "text": "cat",
-      "clip": [
-        "10",
-        1
-      ]
-    },
-    "class_type": "CLIPTextEncode"
-  },
-  "247": {
+  "5": {
     "inputs": {
       "samples": [
-        "22",
+        "3",
         0
       ],
       "vae": [
-        "10",
+        "2",
         2
       ]
     },
-    "class_type": "VAEDecode"
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
   },
-  "301": {
+  "6": {
     "inputs": {
-      "width": 64,
-      "height": 64,
-      "batch_size": 1
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "5",
+        0
+      ]
     },
-    "class_type": "EmptyLatentImage"
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
   }
 }
