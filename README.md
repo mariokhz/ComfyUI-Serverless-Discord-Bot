@@ -1,5 +1,6 @@
 # ComfyUI-serverless for Discord Bot
-_**A Discord Bot that generates images using ComfyUI's workflow api**_
+A Discord Bot that generates images using ComfyUI's workflow api
+
 # Requirements
 You will need: discord.py and ComfyUI
 
