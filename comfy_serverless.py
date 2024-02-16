@@ -134,7 +134,7 @@ class ComfyConnector:
                 image_file = io.BytesIO(image_data)
                 image = Image.open(image_file)
                 images.append(image)
-            return images
+            return images[0]
         except Exception as e:
             exc_type, exc_value, exc_traceback = sys.exc_info()
             line_no = exc_traceback.tb_lineno
